@@ -1,3 +1,5 @@
+osx_image: xcode11
 language: swift
-xcode_workspace: Basic-Example/test.xcodeproj
-xcode_scheme: Pods-FCAlertView_Tests
+
+script:
+    - set -o pipefail && xcodebuild -project "Basic-Example/test.xcodeproj" -target "test" -sdk iphonesimulator -destination name="iPhone 11" clean build
