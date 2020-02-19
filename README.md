@@ -59,9 +59,9 @@ alert.showAlert(inView: self,
 
 - **Title (String?):** You can leave the Title as ```nil``` or Give it a ```String```.
 
-- **Subtitle (String):** FLAlertView always requires a subtitle, even if you want just a few words, add it here instead of the title (then leave the title as nil). *Take a look at [Screenshot 2](https://github.com/nimati/FLAlertView/blob/master/Images/ScreenShots/ScreenShot2.png) for an example*.
+- **Subtitle (String):** FLAlertView always requires a subtitle, even if you want just a few words, add it here instead of the title (then leave the title as nil). *Take a look at [Screenshot 2](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot2.png) for an example*.
 
--  **CustomImage (UIImage?):** You can leave this image as ```nil``` or Give it a ```UIImage``` which will show at the top of the alert. *Take a look at [Screenshot 4](https://github.com/nimati/FLAlertView/blob/master/Images/ScreenShots/ScreenShot4.png) for an example*.
+-  **CustomImage (UIImage?):** You can leave this image as ```nil``` or Give it a ```UIImage``` which will show at the top of the alert. *Take a look at [Screenshot 4](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot4.png) for an example*.
 
 - **DoneButtonTitle (String?):** You can leave this as ```nil``` to show "Ok" as the dismiss button for the AlertView, or Give it an ```String```.
 
