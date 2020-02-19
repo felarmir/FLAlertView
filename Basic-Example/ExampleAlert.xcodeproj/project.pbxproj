@@ -14,6 +14,7 @@
 		013CA5781D7B5659003B6EE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5761D7B5659003B6EE4 /* LaunchScreen.storyboard */; };
 		01BB58B11D80B526006C3586 /* FCAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BB58B01D80B516006C3586 /* FCAlertView.framework */; };
 		01BB58B21D80B526006C3586 /* FCAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 01BB58B01D80B516006C3586 /* FCAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AE7A49C23FD6392005B73EC /* ExampleAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 013CA5F41D7C973E003B6EE4;
 			remoteInfo = FCAlertView;
+		};
+		2AE7A49E23FD6392005B73EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013CA5621D7B5659003B6EE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 013CA5691D7B5659003B6EE4;
+			remoteInfo = ExampleAlert;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,6 +64,9 @@
 		013CA5771D7B5659003B6EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013CA5791D7B5659003B6EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01BB58AB1D80B516006C3586 /* FCAlertView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCAlertView.xcodeproj; path = ../FCAlertView/FCAlertView.xcodeproj; sourceTree = "<group>"; };
+		2AE7A49923FD6392005B73EC /* ExampleAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAlertUITests.swift; sourceTree = "<group>"; };
+		2AE7A49D23FD6392005B73EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE7A49623FD6392005B73EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +93,7 @@
 			children = (
 				01BB58AB1D80B516006C3586 /* FCAlertView.xcodeproj */,
 				013CA56C1D7B5659003B6EE4 /* test */,
+				2AE7A49A23FD6392005B73EC /* ExampleAlertUITests */,
 				013CA56B1D7B5659003B6EE4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				013CA56A1D7B5659003B6EE4 /* ExampleAlert.app */,
+				2AE7A49923FD6392005B73EC /* ExampleAlertUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +128,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2AE7A49A23FD6392005B73EC /* ExampleAlertUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */,
+				2AE7A49D23FD6392005B73EC /* Info.plist */,
+			);
+			path = ExampleAlertUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,19 +159,43 @@
 			productReference = 013CA56A1D7B5659003B6EE4 /* ExampleAlert.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2AE7A49823FD6392005B73EC /* ExampleAlertUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AE7A4A223FD6392005B73EC /* Build configuration list for PBXNativeTarget "ExampleAlertUITests" */;
+			buildPhases = (
+				2AE7A49523FD6392005B73EC /* Sources */,
+				2AE7A49623FD6392005B73EC /* Frameworks */,
+				2AE7A49723FD6392005B73EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AE7A49F23FD6392005B73EC /* PBXTargetDependency */,
+			);
+			name = ExampleAlertUITests;
+			productName = ExampleAlertUITests;
+			productReference = 2AE7A49923FD6392005B73EC /* ExampleAlertUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		013CA5621D7B5659003B6EE4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Kris Penney";
 				TargetAttributes = {
 					013CA5691D7B5659003B6EE4 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = J76Z9QD47W;
+					};
+					2AE7A49823FD6392005B73EC = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = 7RXSVBYZYM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 013CA5691D7B5659003B6EE4;
 					};
 				};
 			};
@@ -166,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				013CA5691D7B5659003B6EE4 /* ExampleAlert */,
+				2AE7A49823FD6392005B73EC /* ExampleAlertUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +245,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE7A49723FD6392005B73EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -203,6 +264,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE7A49523FD6392005B73EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AE7A49C23FD6392005B73EC /* ExampleAlertUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -210,6 +279,11 @@
 			isa = PBXTargetDependency;
 			name = FCAlertView;
 			targetProxy = 01BB58B31D80B526006C3586 /* PBXContainerItemProxy */;
+		};
+		2AE7A49F23FD6392005B73EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 013CA5691D7B5659003B6EE4 /* ExampleAlert */;
+			targetProxy = 2AE7A49E23FD6392005B73EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -365,6 +439,55 @@
 			};
 			name = Release;
 		};
+		2AE7A4A023FD6392005B73EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RXSVBYZYM;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ExampleAlertUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felarmir.ExampleAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExampleAlert;
+			};
+			name = Debug;
+		};
+		2AE7A4A123FD6392005B73EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RXSVBYZYM;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ExampleAlertUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felarmir.ExampleAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ExampleAlert;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,6 +505,15 @@
 			buildConfigurations = (
 				013CA57D1D7B5659003B6EE4 /* Debug */,
 				013CA57E1D7B5659003B6EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AE7A4A223FD6392005B73EC /* Build configuration list for PBXNativeTarget "ExampleAlertUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AE7A4A023FD6392005B73EC /* Debug */,
+				2AE7A4A123FD6392005B73EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
