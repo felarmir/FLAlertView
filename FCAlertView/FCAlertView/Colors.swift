@@ -3,10 +3,11 @@
 //  FCAlertView
 //
 //  Created by Kris Penney on 2016-08-26.
+//  Updated by Denis Andreev on 2020-02-19
 //  Copyright © 2016 Kris Penney. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIColor {
   // Preset Flat Colors
