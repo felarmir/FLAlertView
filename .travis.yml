@@ -1,3 +1,2 @@
 language: objective-c
 xcode_project: Basic-Example/test.xcodeproj # path to your xcodeproj folder
-xcode_scheme: test
