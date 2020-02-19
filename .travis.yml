@@ -1,3 +1,3 @@
 language: swift
-xcode_workspace: Example/FCAlertView.xcworkspace
+xcode_workspace: Basic-Example/test.xcodeproj
 xcode_scheme: Pods-FCAlertView_Tests
