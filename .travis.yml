@@ -1,2 +1,3 @@
 language: objective-c
 xcode_project: Basic-Example/test.xcodeproj # path to your xcodeproj folder
+xcode_destination: platform=iOS Simulator,OS=13.1,name=iPhone X
