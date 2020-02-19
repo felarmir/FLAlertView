@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExampleAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,11 +26,20 @@
                                     <action selector="showAlertWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YYn-j1-l8c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-Ec-cVu">
+                                <rect key="frame" x="175" y="479" width="64" height="30"/>
+                                <state key="normal" title="Launch 2"/>
+                                <connections>
+                                    <action selector="showAlertType2WithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MOl-9C-nXF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ah5-rA-L2O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g7G-sF-Z9x"/>
+                            <constraint firstItem="pvi-Ec-cVu" firstAttribute="top" secondItem="ah5-rA-L2O" secondAttribute="bottom" constant="16" id="jwr-eQ-fRV"/>
                             <constraint firstItem="ah5-rA-L2O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pdu-hw-RAI"/>
+                            <constraint firstItem="pvi-Ec-cVu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7o-jn-5hd"/>
                         </constraints>
                     </view>
                 </viewController>

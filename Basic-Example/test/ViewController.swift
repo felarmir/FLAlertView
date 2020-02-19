@@ -7,38 +7,50 @@
 //
 
 import UIKit
-import FCAlertView
+import FLAlertView
 
 class ViewController: UIViewController {
-
-  let alertView: FCAlertView = {
-    let alert = FCAlertView(type: .success)
-    alert.dismissOnOutsideTouch = true
-    
-    return alert
-  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    alertView.delegate = self
   }
 
   @IBAction func showAlert(sender: UIButton) {
-    alertView.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: ["first", "second"])
-  }
-}
-
-extension ViewController: FCAlertViewDelegate {
-  func alertView(alertView: FCAlertView, clickedButtonIndex index: Int, buttonTitle title: String) {
-    print("\(title) : \(index)")
+    let alert = FLAlertView(type: .success)
+    alert.dismissOnOutsideTouch = true
+    alert.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: ["first", "second"])
+    
+    alert.doneAction = {
+        print("Done pressed")
+    }
+    
+    alert.firstButtonAction = {
+        print("first button pressed")
+    }
+    
+    alert.secondButtonAction = {
+        print("second button pressed")
+    }
     
   }
-  
-  func FCAlertViewDismissed(alertView: FCAlertView) {
-    print("Delegate handling dismiss")
-  }
-  
-  func FCAlertViewWillAppear(alertView: FCAlertView) {
-    print("Delegate handling appearance")
+
+
+  @IBAction func showAlertType2(sender: UIButton) {
+    let alert = FLAlertView(type: .success)
+    alert.dismissOnOutsideTouch = true
+    alert.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: nil)
+    
+    alert.doneAction = {
+        print("Done pressed")
+    }
+    
+    alert.addButton("First") {
+        print("first button pressed")
+    }
+    
+    alert.addButton("Second") {
+        print("second button pressed")
+    }
+    
   }
 }
