@@ -3,10 +3,7 @@ FCAlertView
 
 FCAlertView is a Flat Customizable AlertView, written in Swift
 
-[![CI Status](http://img.shields.io/travis/Nima Tahami/FCAlertView.svg?style=flat)](https://travis-ci.org/Nima Tahami/FCAlertView)
-[![Version](https://img.shields.io/cocoapods/v/FCAlertView.svg?style=flat)](http://cocoapods.org/pods/FCAlertView)
-[![License](https://img.shields.io/cocoapods/l/FCAlertView.svg?style=flat)](http://cocoapods.org/pods/FCAlertView)
-[![Platform](https://img.shields.io/cocoapods/p/FCAlertView.svg?style=flat)](http://cocoapods.org/pods/FCAlertView)
+[![CI Status](https://travis-ci.com/felarmir/FCAlertView.svg?branch=master](https://travis-ci.com/felarmir/FCAlertView)
 
 ![Logo](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/RepoLogo2.png)
 
