@@ -4,7 +4,6 @@ FLAlertView
 FLAlertView is a Flat Customizable AlertView, written in Swift
 
 [![CI Status](https://travis-ci.com/felarmir/FCAlertView.svg?branch=master)](https://travis-ci.com/felarmir/FCAlertView)
-![Logo](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/RepoLogo2.png)
 
 ![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot.png)
 ![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot2.png)
@@ -222,11 +221,16 @@ alert.secondButtonAction = {
 
 OR:
 
-```swift 
+```Swift 
 
 let alert = FLAlertView(type: .success)
     alert.dismissOnOutsideTouch = true
-    alert.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: nil)
+    alert.showAlert(inView: self, 
+                    withTitle: "Testing", 
+                    withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", 
+                    withCustomImage: nil, 
+                    withDoneButtonTitle: "Done", 
+                    andButtons: nil)
     
 alert.addButton("First") {
     print("first button pressed")
