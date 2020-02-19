@@ -24,7 +24,6 @@ class ViewController: UIViewController {
   }
 
   @IBAction func showAlert(sender: UIButton) {
-    
     alertView.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: ["first", "second"])
   }
 }
