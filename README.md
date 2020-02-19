@@ -220,12 +220,39 @@ alert.secondButtonAction = {
 }
 ```
 
+OR:
+
+```swift 
+
+let alert = FLAlertView(type: .success)
+    alert.dismissOnOutsideTouch = true
+    alert.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: nil)
+    
+alert.addButton("First") {
+    print("first button pressed")
+}
+    
+alert.addButton("Second") {
+    print("second button pressed")
+}
+
+```
+
+
 #### Done Button Method
 
 If you'd also like to detect button touch for the Done/Dismiss button, simply add this closure:
 
 ```Swift
 alert.doneAction = {
+    print("Done pressed")
+}
+```
+
+or:
+
+```Swift
+alert.addDoneAction {
     print("Done pressed")
 }
 ```
@@ -246,20 +273,6 @@ FLAlertView is an ongoing project with the goal of becoming the most used custom
 - iPad Friendly Alerts
 - Improved Button Highlight and Customizations
 - Something Missing? Email your suggestion [here](mailto:felarmir@gmail.com)
-
-About FLAlertView
------------------
-
-FLAlertView is a fully customizable and beautifully designed AlertView. I designed FCAlertView beacuse I've always wanted to have access to change the different attributes of the default UIAlertView. Design wise, FLAlertView is similar looking to the default AlertView, however, as you start customizing it for your specific need, you realize it can do a lot more while looking flat and sharp.
-
-FLAlertView lets you do things such as specify the number of buttons, the color scheme of the view, adding a small image to it, hide the view after a certain time, and more. A full description of how to customize FCAlertView to fit your alert can be found on http://github.com/felarmir/FLAlertView.
-
-The Vision for FC Libraries
----------------------------
-
-My goal is to create a set of different libraries, each targetting a certain UI element of iOS, with the goal to improve the design and add more customizations. As such, FLAlertView is a more Flat/Customizable AlertView. With this mindset, I'd like to create more FC libraries, such as FCActionSheet, FCNotification (for quick, in app alerts), FCGuideView (for guiding your users around your app). If you also have a suggestion for an FC Library, please send it [here](mailto:felarmir@gmail.com).
-
-> Ultimately, FC Libraries is here to improve the look and feel of your app for your end users. So all improvements and suggestions are welcome.
 
 Cheers 🍻
 

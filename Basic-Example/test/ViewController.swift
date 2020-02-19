@@ -39,8 +39,9 @@ class ViewController: UIViewController {
     let alert = FLAlertView(type: .success)
     alert.dismissOnOutsideTouch = true
     alert.showAlert(inView: self, withTitle: "Testing", withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", withCustomImage: nil, withDoneButtonTitle: "Done", andButtons: nil)
+
     
-    alert.doneAction = {
+    alert.addDoneAction {
         print("Done pressed")
     }
     
