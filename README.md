@@ -5,11 +5,10 @@ FLAlertView is a Flat Customizable AlertView, written in Swift
 
 [![CI Status](https://travis-ci.com/felarmir/FLAlertView.svg?branch=master)](https://travis-ci.com/felarmir/FLAlertView)
 
-![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot.png)
-![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot2.png)
-![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot3.png)
-![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot4.png)
-![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot5.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/simple.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/success.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/warning.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/withImage.png)
 
 #Objective C
 

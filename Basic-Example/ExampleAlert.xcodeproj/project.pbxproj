@@ -12,15 +12,15 @@
 		013CA5731D7B5659003B6EE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5711D7B5659003B6EE4 /* Main.storyboard */; };
 		013CA5751D7B5659003B6EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5741D7B5659003B6EE4 /* Assets.xcassets */; };
 		013CA5781D7B5659003B6EE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5761D7B5659003B6EE4 /* LaunchScreen.storyboard */; };
-		2A01EF2323FDB96F00BF815A /* FLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A01EF2123FDB94E00BF815A /* FLAlertView.framework */; };
-		2A01EF2423FDB96F00BF815A /* FLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A01EF2123FDB94E00BF815A /* FLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AA6A9E623FF03E800861A83 /* FLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA6A9E523FF03D800861A83 /* FLAlertView.framework */; };
+		2AA6A9E723FF03E800861A83 /* FLAlertView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA6A9E523FF03D800861A83 /* FLAlertView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AE7A49C23FD6392005B73EC /* ExampleAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A01EF2023FDB94E00BF815A /* PBXContainerItemProxy */ = {
+		2AA6A9E423FF03D800861A83 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2A01EF1C23FDB94E00BF815A /* FLAlertView.xcodeproj */;
+			containerPortal = 2AA6A9E023FF03D800861A83 /* FLAlertView.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 013CA5F51D7C973E003B6EE4;
 			remoteInfo = FLAlertView;
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2A01EF2423FDB96F00BF815A /* FLAlertView.framework in Embed Frameworks */,
+				2AA6A9E723FF03E800861A83 /* FLAlertView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +56,7 @@
 		013CA5741D7B5659003B6EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013CA5771D7B5659003B6EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013CA5791D7B5659003B6EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A01EF1C23FDB94E00BF815A /* FLAlertView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FLAlertView.xcodeproj; path = ../FCAlertView/FLAlertView.xcodeproj; sourceTree = "<group>"; };
+		2AA6A9E023FF03D800861A83 /* FLAlertView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FLAlertView.xcodeproj; path = ../FLAlertView/FLAlertView.xcodeproj; sourceTree = "<group>"; };
 		2AE7A49923FD6392005B73EC /* ExampleAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAlertUITests.swift; sourceTree = "<group>"; };
 		2AE7A49D23FD6392005B73EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A01EF2323FDB96F00BF815A /* FLAlertView.framework in Frameworks */,
+				2AA6A9E623FF03E800861A83 /* FLAlertView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 		013CA5611D7B5659003B6EE4 = {
 			isa = PBXGroup;
 			children = (
-				2A01EF1C23FDB94E00BF815A /* FLAlertView.xcodeproj */,
+				2AA6A9E023FF03D800861A83 /* FLAlertView.xcodeproj */,
 				013CA56C1D7B5659003B6EE4 /* test */,
 				2AE7A49A23FD6392005B73EC /* ExampleAlertUITests */,
 				013CA56B1D7B5659003B6EE4 /* Products */,
@@ -114,19 +114,19 @@
 			path = test;
 			sourceTree = "<group>";
 		};
-		2A01EF1D23FDB94E00BF815A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2A01EF2123FDB94E00BF815A /* FLAlertView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2A01EF2223FDB96F00BF815A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AA6A9E123FF03D800861A83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AA6A9E523FF03D800861A83 /* FLAlertView.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2AE7A49A23FD6392005B73EC /* ExampleAlertUITests */ = {
@@ -212,8 +212,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2A01EF1D23FDB94E00BF815A /* Products */;
-					ProjectRef = 2A01EF1C23FDB94E00BF815A /* FLAlertView.xcodeproj */;
+					ProductGroup = 2AA6A9E123FF03D800861A83 /* Products */;
+					ProjectRef = 2AA6A9E023FF03D800861A83 /* FLAlertView.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -225,11 +225,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2A01EF2123FDB94E00BF815A /* FLAlertView.framework */ = {
+		2AA6A9E523FF03D800861A83 /* FLAlertView.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = FLAlertView.framework;
-			remoteRef = 2A01EF2023FDB94E00BF815A /* PBXContainerItemProxy */;
+			remoteRef = 2AA6A9E423FF03D800861A83 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
