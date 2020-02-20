@@ -1,0 +1,6 @@
+framework module FLAlertView {
+  umbrella header "FLAlertView-umbrella.h"
+
+  export *
+  module * { export * }
+}

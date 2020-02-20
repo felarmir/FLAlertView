@@ -1,0 +1,16 @@
+PODS:
+  - FLAlertView (1.0.2)
+
+DEPENDENCIES:
+  - FLAlertView (from `../`)
+
+EXTERNAL SOURCES:
+  FLAlertView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FLAlertView: 466a9005ad879559a86ec8109a4578d64c73b05a
+
+PODFILE CHECKSUM: d63e337b0caf2b355bc81422467ec2021fdf498c
+
+COCOAPODS: 1.8.3
