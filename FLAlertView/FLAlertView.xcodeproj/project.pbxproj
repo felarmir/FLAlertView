@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		013CA5F51D7C973E003B6EE4 /* FLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		013CA5F81D7C973E003B6EE4 /* FLAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLAlertView.h; sourceTree = "<group>"; };
-		013CA5FA1D7C973E003B6EE4 /* flInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = flInfo.plist; sourceTree = "<group>"; };
+		013CA5FA1D7C973E003B6EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013CA6001D7C976A003B6EE4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		013CA6011D7C976A003B6EE4 /* FLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLAlertView.swift; sourceTree = "<group>"; };
 		01BB58A31D7F9B56006C3586 /* alert-round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-round.png"; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 				01BB58A41D7F9B56006C3586 /* checkmark-round.png */,
 				01BB58A51D7F9B56006C3586 /* close-round.png */,
 				013CA5F81D7C973E003B6EE4 /* FLAlertView.h */,
-				013CA5FA1D7C973E003B6EE4 /* flInfo.plist */,
+				013CA5FA1D7C973E003B6EE4 /* Info.plist */,
 			);
 			path = FLAlertView;
 			sourceTree = "<group>";
