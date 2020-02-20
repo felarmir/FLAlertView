@@ -5,10 +5,10 @@ FLAlertView is a Flat Customizable AlertView, written in Swift
 
 [![CI Status](https://travis-ci.com/felarmir/FLAlertView.svg?branch=master)](https://travis-ci.com/felarmir/FLAlertView)
 
-![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/simple.png)
-![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/success.png)
-![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/warning.png)
-![BackgroundImage](https://github.com/felarmir/FLAlertView/Screens/withImage.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/blob/master/Screens/simple.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/blob/master/Screens/success.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/blob/master/Screens/warning.png)
+![BackgroundImage](https://github.com/felarmir/FLAlertView/blob/master/Screens/withImage.png)
 
 #Objective C
 
@@ -16,7 +16,7 @@ For the Objective C version of FCAlertView, [click here](https://github.com/nima
 
 #Installation
 
-### Using CocoaPods - Coming Soon
+### Using CocoaPods
 
 FLAlertView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
