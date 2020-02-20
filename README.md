@@ -3,7 +3,7 @@ FLAlertView
 
 FLAlertView is a Flat Customizable AlertView, written in Swift
 
-[![CI Status](https://travis-ci.com/felarmir/FCAlertView.svg?branch=master)](https://travis-ci.com/felarmir/FCAlertView)
+[![CI Status](https://travis-ci.com/felarmir/FLAlertView.svg?branch=master)](https://travis-ci.com/felarmir/FLAlertView)
 
 ![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot.png)
 ![BackgroundImage](https://github.com/nimati/FCAlertView/blob/master/Images/ScreenShots/ScreenShot2.png)
