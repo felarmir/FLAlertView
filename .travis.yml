@@ -1,4 +1,4 @@
 osx_image: xcode11
 language: swift
 script:
-    - set -o pipefail && xcodebuild test -project Basic-Example/ExampleAlert.xcodeproj -scheme ExampleAlertUITests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
+    - set -o pipefail && xcodebuild test -workspace Basic-Example/ExampleAlert.xcworkspace -scheme ExampleAlertUITests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.0,name=iPhone 11'
