@@ -4,11 +4,11 @@
 target 'ExampleAlert' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  pod 'FLAlertView', :path => '../'
   # Pods for ExampleAlert
 
   target 'ExampleAlertUITests' do
-    pod 'FLAlertView', :path => '../'
+    
   end
 
 end

@@ -94,7 +94,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '10.0'
   spec.swift_version = '5.0'
 
-  spec.source_files  = "FLAlertView/**/*.{h,m,swift}"
+  spec.source_files  = "FLAlertView/*.{h,m,swift}"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -109,7 +109,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-   spec.resources = "FLAlertView/**/*.png"
+   spec.resources = "FLAlertView/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
