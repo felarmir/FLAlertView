@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		15AAB12CFB1DBCE8647E007DA8DD9511 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		19FBE568027A3F246F282B9517654355 /* FLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8111ECB8B10C0B0499979511E0DA5A9 /* FLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A8400B325C7E7ED00F30788 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8400B225C7E7ED00F30788 /* Enums.swift */; };
+		2A8400B825C7E85C00F30788 /* FLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8400B725C7E85C00F30788 /* FLAlertView.swift */; };
+		2A8400C325C8186800F30788 /* UIButton+FL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8400C225C8186800F30788 /* UIButton+FL.swift */; };
 		31E6662CB9AC5290D7A160675C30D668 /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = BC300BA0CE3A948F3A530F6F818D53AA /* alert-round.png */; };
-		45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09501F5936B7A801A8848CCF31AB6808 /* FLAlertView.swift */; };
+		45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView__old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */; };
 		6F52C050B636C79DF38351542CEE1275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		83FA4DD9DFFD9F53DCB1EB846A16793D /* close-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C486EA1E78F429B825B29EDEC3916EC /* close-round.png */; };
 		8404BFED4DF7C992CFE62E1628A8EA47 /* Pods-ExampleAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41A2A7528EE85098ABDAA3DF645729 /* Pods-ExampleAlert-dummy.m */; };
@@ -42,12 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		015A16965B66E14526DFDDB5ACAFD5FC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		09501F5936B7A801A8848CCF31AB6808 /* FLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FLAlertView.swift; path = FLAlertView/FLAlertView.swift; sourceTree = "<group>"; };
-		0A332B89BE56224C1FCACDE2DF4DDD1C /* Pods_ExampleAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ExampleAlert.framework; path = "Pods-ExampleAlert.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		015A16965B66E14526DFDDB5ACAFD5FC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FLAlertView__old.swift; path = FLAlertView/FLAlertView__old.swift; sourceTree = "<group>"; };
+		0A332B89BE56224C1FCACDE2DF4DDD1C /* Pods_ExampleAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2699A5DCDAA24F38CE005423B93905 /* Pods-ExampleAlert-ExampleAlertUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ExampleAlert-ExampleAlertUITests-umbrella.h"; sourceTree = "<group>"; };
 		0BD072209FA3F1E13D7F984538E3F20D /* checkmark-round.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "checkmark-round.png"; path = "FLAlertView/checkmark-round.png"; sourceTree = "<group>"; };
 		13CF1CD65C5CFD3237A579A79C9F7632 /* FLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FLAlertView.modulemap; sourceTree = "<group>"; };
+		2A8400B225C7E7ED00F30788 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		2A8400B725C7E85C00F30788 /* FLAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLAlertView.swift; sourceTree = "<group>"; };
+		2A8400C225C8186800F30788 /* UIButton+FL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+FL.swift"; sourceTree = "<group>"; };
 		2C486EA1E78F429B825B29EDEC3916EC /* close-round.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close-round.png"; path = "FLAlertView/close-round.png"; sourceTree = "<group>"; };
 		2D83D367D23E0998ACB45C2AFEA79564 /* Pods-ExampleAlert-ExampleAlertUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ExampleAlert-ExampleAlertUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -60,14 +66,14 @@
 		54313D3769B947C14A229B59A22FC26E /* Pods-ExampleAlert-ExampleAlertUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ExampleAlert-ExampleAlertUITests-frameworks.sh"; sourceTree = "<group>"; };
 		605EBBF09C324260909A1BC5F033F212 /* Pods-ExampleAlert-ExampleAlertUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ExampleAlert-ExampleAlertUITests.modulemap"; sourceTree = "<group>"; };
 		61D5DD6460618A893D495DF0E08D2F23 /* FLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FLAlertView.xcconfig; sourceTree = "<group>"; };
-		63FC9B0C2FCE5CB77C9E237774EEAADE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		63FC9B0C2FCE5CB77C9E237774EEAADE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		78ED28A1B7C8ECF0ECB49DB5D086E2FB /* FLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAlertView-dummy.m"; sourceTree = "<group>"; };
-		90C0E49A50776C8BEF614E09A36583EE /* FLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FLAlertView.framework; path = FLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90C0E49A50776C8BEF614E09A36583EE /* FLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		933EDAC8F44BB8C10B939B9DA21F8D31 /* Pods-ExampleAlert-ExampleAlertUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ExampleAlert-ExampleAlertUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		96D133B4E6FA5C97539EDEEDA296F42F /* Pods-ExampleAlert-ExampleAlertUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ExampleAlert-ExampleAlertUITests-Info.plist"; sourceTree = "<group>"; };
 		9A8F4D45658ADE42412EB2AF603497DC /* Pods-ExampleAlert-ExampleAlertUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ExampleAlert-ExampleAlertUITests-dummy.m"; sourceTree = "<group>"; };
 		9B2605BCFE69C81C07C958687142F41F /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = FLAlertView/Colors.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A033A0B6ADA00FD22B0D61D15486F6C0 /* Pods-ExampleAlert-ExampleAlertUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ExampleAlert-ExampleAlertUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A43071493DF6005866DA59F317B76D7C /* Pods-ExampleAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ExampleAlert.modulemap"; sourceTree = "<group>"; };
 		ACBC78E82EC2284E6721B7E43FB291D4 /* Pods-ExampleAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ExampleAlert-umbrella.h"; sourceTree = "<group>"; };
@@ -78,8 +84,8 @@
 		E49B985439B0290BECD61944485A944C /* Pods-ExampleAlert-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ExampleAlert-Info.plist"; sourceTree = "<group>"; };
 		E8111ECB8B10C0B0499979511E0DA5A9 /* FLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAlertView-umbrella.h"; sourceTree = "<group>"; };
 		EE4A396B701D9F456E80B1C6131B7438 /* Pods-ExampleAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ExampleAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		F82AF26C1C889D80C27EBF841188FCCF /* FLAlertView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = FLAlertView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FE39E06AD34C0CC54E5363603F3586DD /* Pods_ExampleAlert_ExampleAlertUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ExampleAlert_ExampleAlertUITests.framework; path = "Pods-ExampleAlert-ExampleAlertUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82AF26C1C889D80C27EBF841188FCCF /* FLAlertView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = FLAlertView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FE39E06AD34C0CC54E5363603F3586DD /* Pods_ExampleAlert_ExampleAlertUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleAlert_ExampleAlertUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,7 +243,10 @@
 			children = (
 				9B2605BCFE69C81C07C958687142F41F /* Colors.swift */,
 				4EDDFB2BDFD12103515B346C36EEFC5C /* FLAlertView.h */,
-				09501F5936B7A801A8848CCF31AB6808 /* FLAlertView.swift */,
+				09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */,
+				2A8400B725C7E85C00F30788 /* FLAlertView.swift */,
+				2A8400C225C8186800F30788 /* UIButton+FL.swift */,
+				2A8400B225C7E7ED00F30788 /* Enums.swift */,
 				1D2FED984678759A106555FA73F49F44 /* Pod */,
 				A666869D86A52D03E9908C2C7E648C3E /* Resources */,
 				C749F660BD1442CABC155AFB76599493 /* Support Files */,
@@ -396,7 +405,10 @@
 			files = (
 				A6EC0A9CFB51367DF5FE08B60C67A776 /* Colors.swift in Sources */,
 				FFCB8ABA900E56C11CC834A2747B0250 /* FLAlertView-dummy.m in Sources */,
-				45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView.swift in Sources */,
+				2A8400B325C7E7ED00F30788 /* Enums.swift in Sources */,
+				2A8400C325C8186800F30788 /* UIButton+FL.swift in Sources */,
+				2A8400B825C7E85C00F30788 /* FLAlertView.swift in Sources */,
+				45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView__old.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,8 +731,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
