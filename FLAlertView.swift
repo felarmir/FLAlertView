@@ -113,25 +113,52 @@ public class FLAlertView: UIView {
             alertView!.addSubview(doneButton)
         }
         else {
-            let stackView = UIStackView(frame: alertViewFrame)
-            if buttons.count <= 2 {
-                stackView.axis = .horizontal
-            } else {
-                stackView.axis = .vertical
-            }
-            stackView.distribution = .fillEqually
-            stackView.alignment = .fill
+            let buttonsView = UIView(frame: CGRect(
+                                        x: 0,
+                                        y: alertViewFrame.height - CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight,
+                                        width: alertViewFrame.width,
+                                        height: CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight))
             
-            stackView.frame = CGRect(
-                x: 0,
-                y: alertViewFrame.height - CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight,
-                width: alertViewFrame.width,
-                height: CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight)
+            alertView!.addSubview(buttonsView)
             
-            alertView!.addSubview(stackView)
-            
+            var buttonNumber = 0
             for button in buttons {
-                stackView.addArrangedSubview(button)
+                if buttons.count <= 2 {
+                    button.frame = CGRect(
+                        x: (Int(alertViewFrame.width) / 2) * buttonNumber + buttonNumber * 2,
+                        y: 0,
+                        width: (Int(alertViewFrame.width) / 2 ) - buttonNumber * 2,
+                        height: Int(FLAlertConstants.buttonHeight)
+                    )
+                    let spearator = visualEffectSeparator(rect: CGRect(
+                                                            x: (Int(alertViewFrame.width) / 2) * buttonNumber,
+                                                            y: 0,
+                                                            width: 2,
+                                                            height: Int(FLAlertConstants.buttonHeight)))
+                    
+                    if buttonNumber > 0 {
+                        buttonsView.addSubview(spearator)
+                    }
+                } else {
+                    button.frame = CGRect(
+                        x: 0,
+                        y: Int(FLAlertConstants.buttonHeight) * buttonNumber + 2,
+                        width: Int(alertViewFrame.width),
+                        height: Int(FLAlertConstants.buttonHeight - CGFloat(buttonNumber * 2))
+                    )
+                    let spearator = visualEffectSeparator(rect: CGRect(
+                                                            x: 0,
+                                                            y: Int(FLAlertConstants.buttonHeight) * buttonNumber,
+                                                            width: Int(alertViewFrame.width),
+                                                            height: 2))
+                    
+                    if buttonNumber > 0 {
+                        buttonsView.addSubview(spearator)
+                    }
+                }
+                
+                buttonsView.addSubview(button)
+                buttonNumber += 1
             }
         }
         
@@ -277,29 +304,30 @@ extension FLAlertView {
         messageLabel.textAlignment = .center
         messageLabel.adjustsFontSizeToFitWidth = true
         
-        //  Separator Line - Separating Header View with Button View
-        let separatorLineView = UIView(frame: CGRect(
-                                        x: 0,
-                                        y: alertViewFrame.size.height - (CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight),
-                                        width: alertViewFrame.size.width,
-                                        height: 2))
-        separatorLineView.backgroundColor = UIColor(white: 100 / 255, alpha: 1)
-        
-        let blurEffect = UIBlurEffect(style: .extraLight)
-        
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        visualEffectView.frame = separatorLineView.bounds
-        visualEffectView.isUserInteractionEnabled = false
-        
-        separatorLineView.addSubview(visualEffectView)
-        
         //  Adding Contents - Conteained in Header and Separator Views
         alertViewContainer!.addSubview(titleLabel)
         alertViewContainer!.addSubview(messageLabel)
 
         if !buttons.isEmpty {
-            alertViewContainer!.addSubview(separatorLineView)
+            let spearator = visualEffectSeparator(rect: CGRect(
+                                                    x: 0,
+                                                    y: alertViewFrame.size.height - (CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight),
+                                                    width: alertViewFrame.size.width,
+                                                    height: 2))
+            alertViewContainer!.addSubview(spearator)
         }
+    }
+    
+    private func visualEffectSeparator(rect: CGRect) -> UIView {
+        let separatorLineView = UIView(frame: rect)
+        separatorLineView.backgroundColor = UIColor(white: 100 / 255, alpha: 1)
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.frame = separatorLineView.bounds
+        visualEffectView.isUserInteractionEnabled = false
+        
+        separatorLineView.addSubview(visualEffectView)
+        return separatorLineView
     }
     
     private func makeCautionUI() {
