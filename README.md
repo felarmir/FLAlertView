@@ -198,67 +198,24 @@ let alert = FLAlertView();
 alert.delegate = self
 
 alert.showAlert(inView: self,
-             withTitle:"Alert Title",
-          withSubtitle:"This is your alert's subtitle. Keep it short and concise. 😜👌",
-       withCustomImage:nil,
-   withDoneButtonTitle:nil,
-            andButtons:["Button 1", "Button 2"]) // Set your button titles here
+             withTitle: "Alert Title",
+          withSubtitle: "This is your alert's subtitle. Keep it short and concise. 😜👌",
+       withCustomImage: nil,
+   withDoneButtonTitle: "Done")
 
 ```
 
 After adding your FLAlertView, you can detect button touches by adding this closures:
 
 ```Swift
-alert.firstButtonAction = {
-    print("first button pressed")
-}
-    
-alert.secondButtonAction = {
-    print("second button pressed")
-}
-```
 
-OR:
-
-```Swift 
-
-let alert = FLAlertView(type: .success)
-    alert.dismissOnOutsideTouch = true
-    alert.showAlert(inView: self, 
-                    withTitle: "Testing", 
-                    withSubtitle: "This is a test of the alert view. Touch the Close button to hide.", 
-                    withCustomImage: nil, 
-                    withDoneButtonTitle: "Done", 
-                    andButtons: nil)
-    
-alert.addButton("First") {
-    print("first button pressed")
-}
-    
-alert.addButton("Second") {
-    print("second button pressed")
+alert.addAction(title: "Cancel",
+                 type: .cancel) {
+            // action
 }
 
 ```
 
-
-#### Done Button Method
-
-If you'd also like to detect button touch for the Done/Dismiss button, simply add this closure:
-
-```Swift
-alert.doneAction = {
-    print("Done pressed")
-}
-```
-
-or:
-
-```Swift
-alert.addDoneAction {
-    print("Done pressed")
-}
-```
 
 # More Customizations
 
