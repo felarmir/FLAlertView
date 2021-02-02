@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,35 +19,35 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5tO-Zk-c8y">
                                 <rect key="frame" x="0.0" y="52" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-6o-wZg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n3-6o-wZg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="160.5"/>
                                         <state key="normal" title="Simple"/>
                                         <connections>
                                             <action selector="showSimpleAlertWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UkX-0d-Hu7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-Ni-Imo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-iy-JCb">
                                         <rect key="frame" x="0.0" y="160.5" width="414" height="160.5"/>
-                                        <state key="normal" title="caution"/>
-                                        <connections>
-                                            <action selector="showCoutWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ROR-rf-GC1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-iy-JCb">
-                                        <rect key="frame" x="0.0" y="321" width="414" height="160"/>
                                         <state key="normal" title="with image"/>
                                         <connections>
                                             <action selector="showSimpleAlertWithImageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBt-KC-Ias"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUf-7r-GO9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-Ni-Imo">
+                                        <rect key="frame" x="0.0" y="321" width="414" height="160"/>
+                                        <state key="normal" title="caution"/>
+                                        <connections>
+                                            <action selector="showCoutWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ROR-rf-GC1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUf-7r-GO9">
                                         <rect key="frame" x="0.0" y="481" width="414" height="160.5"/>
                                         <state key="normal" title="warning"/>
                                         <connections>
                                             <action selector="showWarningWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHh-a6-SZz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-If-wfu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-If-wfu">
                                         <rect key="frame" x="0.0" y="641.5" width="414" height="160.5"/>
                                         <state key="normal" title="Success"/>
                                         <connections>
@@ -57,6 +57,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="IEy-9k-Zb2"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5tO-Zk-c8y" firstAttribute="top" secondItem="IEy-9k-Zb2" secondAttribute="top" constant="8" id="2e7-aO-i6R"/>
@@ -64,7 +65,6 @@
                             <constraint firstItem="IEy-9k-Zb2" firstAttribute="bottom" secondItem="5tO-Zk-c8y" secondAttribute="bottom" constant="8" id="kRi-Np-PhO"/>
                             <constraint firstItem="5tO-Zk-c8y" firstAttribute="trailing" secondItem="IEy-9k-Zb2" secondAttribute="trailing" id="p9E-2r-jv6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IEy-9k-Zb2"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

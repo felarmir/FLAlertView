@@ -13,7 +13,6 @@
 		2A8400B825C7E85C00F30788 /* FLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8400B725C7E85C00F30788 /* FLAlertView.swift */; };
 		2A8400C325C8186800F30788 /* UIButton+FL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8400C225C8186800F30788 /* UIButton+FL.swift */; };
 		31E6662CB9AC5290D7A160675C30D668 /* alert-round.png in Resources */ = {isa = PBXBuildFile; fileRef = BC300BA0CE3A948F3A530F6F818D53AA /* alert-round.png */; };
-		45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView__old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */; };
 		6F52C050B636C79DF38351542CEE1275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		83FA4DD9DFFD9F53DCB1EB846A16793D /* close-round.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C486EA1E78F429B825B29EDEC3916EC /* close-round.png */; };
 		8404BFED4DF7C992CFE62E1628A8EA47 /* Pods-ExampleAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41A2A7528EE85098ABDAA3DF645729 /* Pods-ExampleAlert-dummy.m */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		015A16965B66E14526DFDDB5ACAFD5FC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FLAlertView__old.swift; path = FLAlertView/FLAlertView__old.swift; sourceTree = "<group>"; };
 		0A332B89BE56224C1FCACDE2DF4DDD1C /* Pods_ExampleAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2699A5DCDAA24F38CE005423B93905 /* Pods-ExampleAlert-ExampleAlertUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ExampleAlert-ExampleAlertUITests-umbrella.h"; sourceTree = "<group>"; };
 		0BD072209FA3F1E13D7F984538E3F20D /* checkmark-round.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "checkmark-round.png"; path = "FLAlertView/checkmark-round.png"; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			children = (
 				9B2605BCFE69C81C07C958687142F41F /* Colors.swift */,
 				4EDDFB2BDFD12103515B346C36EEFC5C /* FLAlertView.h */,
-				09501F5936B7A801A8848CCF31AB6808 /* FLAlertView__old.swift */,
 				2A8400B725C7E85C00F30788 /* FLAlertView.swift */,
 				2A8400C225C8186800F30788 /* UIButton+FL.swift */,
 				2A8400B225C7E7ED00F30788 /* Enums.swift */,
@@ -408,7 +405,6 @@
 				2A8400B325C7E7ED00F30788 /* Enums.swift in Sources */,
 				2A8400C325C8186800F30788 /* UIButton+FL.swift in Sources */,
 				2A8400B825C7E85C00F30788 /* FLAlertView.swift in Sources */,
-				45558CDA6B8A5CBA4C79ABAB3729172F /* FLAlertView__old.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

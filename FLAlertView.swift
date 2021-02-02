@@ -16,6 +16,7 @@ public class FLAlertView: UIView {
     public var colorScheme: UIColor?
     public var titleColor: UIColor = .black
     public var subTitleColor: UIColor = .black
+    public var dismissOnOutsideTouch = false
     
     private var alertView: UIView?
     private var alertViewContainer: UIView?
@@ -38,7 +39,7 @@ public class FLAlertView: UIView {
         super.init(frame: frame)
     }
     
-    /// Default Init
+    // MARK: Default Init
     public convenience init() {
         let result = UIScreen.main.bounds.size
         let frame = CGRect(x: 0, y: 0, width: result.width, height: result.height)
@@ -62,6 +63,22 @@ public class FLAlertView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Touch Events
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let touchPoint = touch.location(in: alertContainerBackgroundView)
+            let touchPoint2 = touch.location(in: alertViewContainer)
+            
+            let isPointInsideBackview = alertContainerBackgroundView.point(inside: touchPoint, with: nil)
+            let isPointInsideAlertView = alertContainerBackgroundView.point(inside: touchPoint2, with: nil)
+            
+            if dismissOnOutsideTouch && isPointInsideBackview && !isPointInsideAlertView {
+                dismissAlertView()
+            }
+        }
+    }
+    
+    // MARK: Draw
     public override func draw(_ rect: CGRect) {
         alpha = 0
         let alertViewFrame = setupAlertViewFrame()
@@ -127,7 +144,7 @@ public class FLAlertView: UIView {
                     button.frame = CGRect(
                         x: (Int(alertViewFrame.width) / 2) * buttonNumber + buttonNumber * 2,
                         y: 0,
-                        width: (Int(alertViewFrame.width) / 2 ) - buttonNumber * 2,
+                        width: (Int(alertViewFrame.width) / buttons.count ) - buttonNumber * 2,
                         height: Int(FLAlertConstants.buttonHeight)
                     )
                     let spearator = visualEffectSeparator(rect: CGRect(
@@ -330,18 +347,29 @@ extension FLAlertView {
         return separatorLineView
     }
     
+    // Default Types of Alerts
+    private func makeWarningUI() {
+        if let path = Bundle(for: FLAlertView.self).path(forResource: "close-round", ofType: "png") {
+            setTheme(iconPath: path, tintColor: .flatRed)
+        }
+    }
+    
     private func makeCautionUI() {
-        
+        if let path = Bundle(for: FLAlertView.self).path(forResource: "alert-round", ofType: "png") {
+            setTheme(iconPath: path, tintColor: .flatOrange)
+        }
     }
     
     private func makeSuccessUI() {
-        
+        if let path = Bundle(for: FLAlertView.self).path(forResource: "checkmark-round", ofType: "png") {
+            setTheme(iconPath: path, tintColor: .flatGreen)
+        }
     }
     
-    private func makeWarningUI() {
-        
+    private func setTheme(iconPath path: String, tintColor color: UIColor) {
+        alertImage = UIImage(contentsOfFile: path)
+        self.colorScheme = color
     }
-    
     
 }
 
@@ -350,6 +378,16 @@ extension FLAlertView {
     
     public func addAction(title: String, type: FLButtonType = .defaultButton, action: @escaping ()-> Void) {
         let button = UIButton(type: .system)
+        
+        switch type {
+        case .defaultButton:
+            button.tintColor = colorScheme
+        case .done:
+            button.tintColor = .flatGreen
+        case .cancel:
+            button.tintColor = .flatRed
+        }
+        
         button.setTitle(title, for: .normal)
         button.backgroundColor = .white
         button.actionHandler(controlEvents: .touchUpInside) {
@@ -357,13 +395,10 @@ extension FLAlertView {
             self.dismissAlertView()
         }
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular)
-        button.tintColor = colorScheme
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.minimumScaleFactor = 0.8
         buttons.append(button)
     }
-    
-    
 }
 
 //MARK: Show methods
@@ -408,6 +443,5 @@ extension FLAlertView {
         }) { (finished) in
             self.removeFromSuperview()
         }
-        UIButton.alertActions.removeAll()
     }
 }

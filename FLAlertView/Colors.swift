@@ -11,7 +11,6 @@ import UIKit
 
 extension UIColor {
   // Preset Flat Colors
-    
   @objc public static let flatTurquoise = UIColor(red: 26/255, green: 188/255, blue: 156/255, alpha: 1)
   @objc public static let flatGreen = UIColor(red: 39/255, green: 174/255, blue: 96/255, alpha: 1)
   @objc public static let flatBlue = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1)
