@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   spec.name         = "FLAlertView"
-  spec.version      = '1.1.0'
+  spec.version      = '1.1.1'
   spec.summary      = "FLAlertView is a Flat Customizable AlertView, written in Swift"
   spec.description  = <<-DESC
   FLAlertView is a Flat Customizable AlertView, written in Swift for Projects on Swift
