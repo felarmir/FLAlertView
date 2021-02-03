@@ -8,7 +8,7 @@
 import UIKit
 
 public class FLAlertView: UIView {
-    
+
     public var title: String?
     public var subTitle: String?
     public var alertImage: UIImage?
@@ -17,38 +17,38 @@ public class FLAlertView: UIView {
     public var titleColor: UIColor = .black
     public var subTitleColor: UIColor = .black
     public var dismissOnOutsideTouch = false
-    
+
     private var alertView: UIView?
     private var alertViewContainer: UIView?
     private var buttons = [UIButton]()
-    
+
     // AlertView Background : Probably take frame out & make it constant
     let alertContainerBackgroundView: UIView = {
         let alertContainerBackgroundView = UIView()
         alertContainerBackgroundView.backgroundColor = UIColor(white: 0, alpha: 0.35)
         return alertContainerBackgroundView
     }()
-    
+
     let circleLayer: CAShapeLayer = {
         let circle = CAShapeLayer()
         circle.fillColor = UIColor.white.cgColor
         return circle
     }()
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     // MARK: Default Init
     public convenience init() {
         let result = UIScreen.main.bounds.size
         let frame = CGRect(x: 0, y: 0, width: result.width, height: result.height)
         self.init(frame: frame)
     }
-    
+
     public convenience init(type: FLAlertType) {
         self.init()
-        
+
         switch type {
         case .caution:
             makeCautionUI()
@@ -58,26 +58,26 @@ public class FLAlertView: UIView {
             makeSuccessUI()
         }
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: Touch Events
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let touchPoint = touch.location(in: alertContainerBackgroundView)
             let touchPoint2 = touch.location(in: alertViewContainer)
-            
+
             let isPointInsideBackview = alertContainerBackgroundView.point(inside: touchPoint, with: nil)
             let isPointInsideAlertView = alertContainerBackgroundView.point(inside: touchPoint2, with: nil)
-            
+
             if dismissOnOutsideTouch && isPointInsideBackview && !isPointInsideAlertView {
                 dismissAlertView()
             }
         }
     }
-    
+
     // MARK: Draw
     public override func draw(_ rect: CGRect) {
         alpha = 0
@@ -85,9 +85,9 @@ public class FLAlertView: UIView {
         alertViewContainer = UIView(frame: alertViewFrame)
         alertViewContainer!.backgroundColor = .clear
         addSubview(alertViewContainer!)
-        
+
         alertView = UIView(frame: CGRect(x: 0, y: 0, width: alertViewFrame.size.width, height: alertViewFrame.size.height))
-        
+
         //  Setting Background Color of AlertView
         if alertImage != nil {
             alertView!.backgroundColor = .clear
@@ -95,18 +95,18 @@ public class FLAlertView: UIView {
             alertView!.backgroundColor = .white
         }
         alertViewContainer!.addSubview(alertView!)
-        
+
         // CREATING ALERTVIEW
         // CUSTOM SHAPING - Displaying Cut out circle for Vector Type Alerts
         if alertImage != nil {
             renderCircleCutout(withAlertViewFrame: alertViewFrame)
         }
-        
+
         //  HEADER VIEW - With Title & Subtitle
         renderHeader(withAlertViewFrame: alertViewFrame)
-        
+
         //  Button(s) View - Section containing all Buttons
-        
+
         // View only contains DONE/DISMISS Button
         if(buttons.isEmpty) {
             let doneButton = UIButton(type: .system)
@@ -116,7 +116,7 @@ public class FLAlertView: UIView {
             } else {
                 doneButton.backgroundColor = .white
             }
-            
+
             doneButton.frame = CGRect(
                 x: 0,
                 y: alertViewFrame.size.height - 45,
@@ -125,8 +125,8 @@ public class FLAlertView: UIView {
             doneButton.setTitle("Ok", for: .normal)
             doneButton.actionHandler(controlEvents: .touchUpInside, forAction: {})
             doneButton.titleLabel!.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
-            
-            
+
+
             alertView!.addSubview(doneButton)
         }
         else {
@@ -135,9 +135,9 @@ public class FLAlertView: UIView {
                                         y: alertViewFrame.height - CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight,
                                         width: alertViewFrame.width,
                                         height: CGFloat(buttons.count <= 2 ? 1 : buttons.count) * FLAlertConstants.buttonHeight))
-            
+
             alertView!.addSubview(buttonsView)
-            
+
             var buttonNumber = 0
             for button in buttons {
                 if buttons.count <= 2 {
@@ -152,7 +152,7 @@ public class FLAlertView: UIView {
                                                             y: 0,
                                                             width: 2,
                                                             height: Int(FLAlertConstants.buttonHeight)))
-                    
+
                     if buttonNumber > 0 {
                         buttonsView.addSubview(spearator)
                     }
@@ -168,21 +168,21 @@ public class FLAlertView: UIView {
                                                             y: Int(FLAlertConstants.buttonHeight) * buttonNumber,
                                                             width: Int(alertViewFrame.width),
                                                             height: 2))
-                    
+
                     if buttonNumber > 0 {
                         buttonsView.addSubview(spearator)
                     }
                 }
-                
+
                 buttonsView.addSubview(button)
                 buttonNumber += 1
             }
         }
-        
-        
+
+
         circleLayer.path = UIBezierPath(ovalIn: CGRect(x: alertViewContainer!.frame.size.width / 2 - 30.0, y: -30.0, width: 60.0, height: 60.0)).cgPath
-        
-        
+
+
         let imageViewButton = UIButton(type: .system)
         imageViewButton.frame = CGRect(
             x: alertViewContainer!.frame.size.width / 2 - 15.0,
@@ -192,25 +192,25 @@ public class FLAlertView: UIView {
         imageViewButton.setImage(alertImage, for: .normal)
         imageViewButton.isUserInteractionEnabled = false
         imageViewButton.tintColor = colorScheme
-        
+
         //  VIEW Border - Rounding Corners of AlertView
         alertView?.layer.cornerRadius = FLAlertConstants.cornerRadius
         alertView?.clipsToBounds = true
-        
+
         if alertImage != nil {
             alertViewContainer!.layer.addSublayer(circleLayer)
             alertViewContainer!.addSubview(imageViewButton)
         }
-        
+
         //  Scaling AlertView - Before Animation
         alertViewContainer!.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
-        
+
         //  Applying Shadow
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.1
         layer.shadowRadius = 10
         layer.shadowOffset = CGSize(width: 0, height: 0)
-        
+
         showAlertView()
     }
 }
@@ -223,10 +223,10 @@ extension FLAlertView {
         let viewWidth = screenSize.width - FLAlertConstants.spacing
         let horizontalPosition = self.bounds.width / 2 - (viewWidth / 2)
         var alertViewFrame: CGRect
-        
-        
+
+
         alertContainerBackgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        
+
         //  Adjusting AlertView Frames
         if alertImage != nil {
             alertViewFrame = CGRect(x: horizontalPosition,
@@ -239,7 +239,7 @@ extension FLAlertView {
                                     width: viewWidth,
                                     height: FLAlertConstants.height - 30)
         }
-        
+
         //  Frames for when AlertView doesn't contain a title
         if title == nil {
             alertViewFrame = CGRect(x: horizontalPosition,
@@ -247,7 +247,7 @@ extension FLAlertView {
                                     width: viewWidth,
                                     height: alertViewFrame.size.height - 10)
         }
-        
+
         //  Frames for when AlertView has buttons
         if buttons.isEmpty {
             alertViewFrame = CGRect(x: horizontalPosition,
@@ -264,7 +264,7 @@ extension FLAlertView {
         }
         return alertViewFrame
     }
-    
+
     private func renderCircleCutout(withAlertViewFrame alertViewFrame: CGRect) {
         let radius = alertView!.frame.size.width
         let rectPath = UIBezierPath(roundedRect: CGRect(
@@ -279,21 +279,21 @@ extension FLAlertView {
                                         width: 67.5,
                                         height: 67.5),
                                       cornerRadius: radius)
-        
+
         rectPath.append(circlePath)
         rectPath.usesEvenOddFillRule = true
-        
+
         let fillLayer = CAShapeLayer()
         fillLayer.path = rectPath.cgPath
         fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
         fillLayer.fillColor = UIColor.white.cgColor
         fillLayer.opacity = 1
-        
+
         alertView!.layer.addSublayer(fillLayer)
     }
-    
+
     private func renderHeader(withAlertViewFrame alertViewFrame: CGRect) {
-        
+
         let titleLabel = UILabel(frame: CGRect(
                                     x: 15.0,
                                     y: 20.0 + CGFloat(((alertImage != nil) ? 1 : 0) * 30),
@@ -304,9 +304,9 @@ extension FLAlertView {
         titleLabel.textColor = titleColor
         titleLabel.text = title
         titleLabel.textAlignment = .center
-        
+
         let descriptionLevel = (title == nil) ? 25 : 45
-        
+
         let messageLabel = UILabel(frame: CGRect(
                                         x: 25.0,
                                         y: CGFloat(descriptionLevel + ((alertImage != nil) ? 1 : 0) * 30),
@@ -314,13 +314,13 @@ extension FLAlertView {
                                         height: 60.0))
         messageLabel.font = (title == nil) ? UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular):
             UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
-        
+
         messageLabel.numberOfLines = 4
         messageLabel.textColor = subTitleColor
         messageLabel.text = subTitle
         messageLabel.textAlignment = .center
         messageLabel.adjustsFontSizeToFitWidth = true
-        
+
         //  Adding Contents - Conteained in Header and Separator Views
         alertViewContainer!.addSubview(titleLabel)
         alertViewContainer!.addSubview(messageLabel)
@@ -334,7 +334,7 @@ extension FLAlertView {
             alertViewContainer!.addSubview(spearator)
         }
     }
-    
+
     private func visualEffectSeparator(rect: CGRect) -> UIView {
         let separatorLineView = UIView(frame: rect)
         separatorLineView.backgroundColor = UIColor(white: 100 / 255, alpha: 1)
@@ -342,43 +342,43 @@ extension FLAlertView {
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = separatorLineView.bounds
         visualEffectView.isUserInteractionEnabled = false
-        
+
         separatorLineView.addSubview(visualEffectView)
         return separatorLineView
     }
-    
+
     // Default Types of Alerts
     private func makeWarningUI() {
         if let path = Bundle(for: FLAlertView.self).path(forResource: "close-round", ofType: "png") {
             setTheme(iconPath: path, tintColor: .flatRed)
         }
     }
-    
+
     private func makeCautionUI() {
         if let path = Bundle(for: FLAlertView.self).path(forResource: "alert-round", ofType: "png") {
             setTheme(iconPath: path, tintColor: .flatOrange)
         }
     }
-    
+
     private func makeSuccessUI() {
         if let path = Bundle(for: FLAlertView.self).path(forResource: "checkmark-round", ofType: "png") {
             setTheme(iconPath: path, tintColor: .flatGreen)
         }
     }
-    
+
     private func setTheme(iconPath path: String, tintColor color: UIColor) {
         alertImage = UIImage(contentsOfFile: path)
         self.colorScheme = color
     }
-    
+
 }
 
 //MARK: button actions adding methods
 extension FLAlertView {
-    
+
     public func addAction(title: String, type: FLButtonType = .defaultButton, action: @escaping ()-> Void) {
         let button = UIButton(type: .system)
-        
+
         switch type {
         case .defaultButton:
             button.tintColor = colorScheme
@@ -387,7 +387,7 @@ extension FLAlertView {
         case .cancel:
             button.tintColor = .flatRed
         }
-        
+
         button.setTitle(title, for: .normal)
         button.backgroundColor = .white
         button.actionHandler(controlEvents: .touchUpInside) {
@@ -403,26 +403,26 @@ extension FLAlertView {
 
 //MARK: Show methods
 extension FLAlertView {
-    
+
     public func showAlert(inView view: UIViewController) {
         view.view.window?.addSubview(self)
     }
-    
+
     public func showAlert(inView view: UIViewController,
                           withTitle title: String?,
                           withSubtitle subTitle: String,
                           withCustomImage image: UIImage?,
                           withDoneButtonTitle done: String?) {
-        
+
         self.title = title
         self.subTitle = subTitle
         self.alertImage = image
         addAction(title: done ?? "Done", type: .done, action: dismissAlertView)
-        
-        
+
+
         view.view.window?.addSubview(self)
     }
-    
+
     // Show Alert View
     func showAlertView() {
         UIView.animate(withDuration: 0.3, delay: 0.3, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
@@ -434,7 +434,7 @@ extension FLAlertView {
             }
         }
     }
-    
+
     // Dismissing Alert View
     @objc public func dismissAlertView() {
         UIView.animate(withDuration: 0.175, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {

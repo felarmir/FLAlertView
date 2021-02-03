@@ -1,9 +1,8 @@
 //
-//  FCAlertView.h
-//  FCAlertView
+//  FLAlertView.h
+//  Pods
 //
-//  Created by Kris Penney on 2016-09-04.
-//  Copyright © 2016 Kris Penney. All rights reserved.
+//  Created by Denis Andreev on 03.02.2021.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,7 +12,3 @@ FOUNDATION_EXPORT double FLAlertViewVersionNumber;
 
 //! Project version string for FLAlertView.
 FOUNDATION_EXPORT const unsigned char FLAlertViewVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <FLAlertView/PublicHeader.h>
-
-

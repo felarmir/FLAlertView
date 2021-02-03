@@ -1,10 +1,8 @@
 //
 //  Colors.swift
-//  FCAlertView
+//  FLAlertView
 //
-//  Created by Kris Penney on 2016-08-26.
-//  Updated by Denis Andreev on 2020-02-19
-//  Copyright © 2016 Kris Penney. All rights reserved.
+//  Created by Denis Andreev on 01.02.2021.
 //
 
 import UIKit
