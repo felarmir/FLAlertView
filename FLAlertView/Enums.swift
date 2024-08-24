@@ -7,12 +7,14 @@
 
 import Foundation
 
+/// Alert types
 public enum FLAlertType {
     case caution
     case success
     case warning
 }
 
+/// Button types
 public enum FLButtonType {
     case defaultButton
     case done

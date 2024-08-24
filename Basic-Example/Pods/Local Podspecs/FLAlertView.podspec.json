@@ -1,6 +1,6 @@
 {
   "name": "FLAlertView",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "FLAlertView is a Flat Customizable AlertView, written in Swift",
   "description": "FLAlertView is a Flat Customizable AlertView, written in Swift for Projects on Swift",
   "homepage": "https://github.com/felarmir/FLAlertView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/felarmir/FLAlertView.git",
-    "tag": "1.1.0"
+    "tag": "1.1.1"
   },
   "platforms": {
     "ios": "10.0"

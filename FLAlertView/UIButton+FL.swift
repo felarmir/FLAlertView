@@ -9,9 +9,15 @@ import UIKit
 
 extension UIButton {
     private func actionHandler(action:(() -> Void)? = nil) {
-        struct __ { static var alertActions = [String: ()->Void]() }
-        if action != nil { __.alertActions[self.titleLabel!.text!] = action }
-        else { __.alertActions[self.titleLabel!.text!]?() }
+        struct __ {
+            static var alertActions = [String: ()->Void]()
+        }
+        
+        if action != nil {
+            __.alertActions[self.titleLabel!.text!] = action
+        } else {
+            __.alertActions[self.titleLabel!.text!]?()
+        }
     }
     
     @objc private func triggerActionHandler() {

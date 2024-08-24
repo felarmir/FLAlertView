@@ -1,5 +1,5 @@
 PODS:
-  - FLAlertView (1.1.0)
+  - FLAlertView (1.1.1)
 
 DEPENDENCIES:
   - FLAlertView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FLAlertView: 26f960864aca9fe0da0478726eea3c4ac0a1b9b5
+  FLAlertView: f0420f3830269ae27261ddb05a14b3d3783c0900
 
 PODFILE CHECKSUM: d9756f6afdc93e85966ee991dc1c5e36120c907d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.15.2
