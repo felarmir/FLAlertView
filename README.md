@@ -31,7 +31,7 @@ Clone or Download this Repo. Then simply drag the folder ```FLAlertView``` to yo
 
 You can use "Xcode/File/Swift Packages/Add Package Dependency..." and write github url:
 ```url 
-https://github.com/felarmir/FLAlertView.git
+https://github.com/felarmir/FLAlertView
 ```
 
 # Example
