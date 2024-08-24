@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		013CA5731D7B5659003B6EE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5711D7B5659003B6EE4 /* Main.storyboard */; };
 		013CA5751D7B5659003B6EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5741D7B5659003B6EE4 /* Assets.xcassets */; };
 		013CA5781D7B5659003B6EE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013CA5761D7B5659003B6EE4 /* LaunchScreen.storyboard */; };
+		2A4036742C7A0C0E003622BA /* FLAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4036732C7A0C0E003622BA /* FLAlertView */; };
 		2AE7A49C23FD6392005B73EC /* ExampleAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4036742C7A0C0E003622BA /* FLAlertView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,9 @@
 			dependencies = (
 			);
 			name = ExampleAlert;
+			packageProductDependencies = (
+				2A4036732C7A0C0E003622BA /* FLAlertView */,
+			);
 			productName = test;
 			productReference = 013CA56A1D7B5659003B6EE4 /* ExampleAlert.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +185,7 @@
 			);
 			mainGroup = 013CA5611D7B5659003B6EE4;
 			packageReferences = (
+				2A4036722C7A0C0E003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */,
 			);
 			productRefGroup = 013CA56B1D7B5659003B6EE4 /* Products */;
 			projectDirPath = "";
@@ -374,7 +380,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.krispenney.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -388,7 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.krispenney.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -408,7 +420,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleAlertUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felarmir.ExampleAlertUITests;
@@ -433,7 +449,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExampleAlertUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.felarmir.ExampleAlertUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +495,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A4036722C7A0C0E003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/felarmir/FLAlertView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A4036732C7A0C0E003622BA /* FLAlertView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A4036722C7A0C0E003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */;
+			productName = FLAlertView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 013CA5621D7B5659003B6EE4 /* Project object */;
 }

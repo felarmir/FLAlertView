@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import ObjectiveC
+
+private var actionKey: UInt8 = 0
 
 extension UIButton {
-    private func actionHandler(action:(() -> Void)? = nil) {
-        struct __ {
-            static var alertActions = [String: ()->Void]()
-        }
-        
-        if action != nil {
-            __.alertActions[self.titleLabel!.text!] = action
+    private func actionHandler(action: (() -> Void)? = nil) {
+        if let action = action {
+            objc_setAssociatedObject(self, &actionKey, action, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         } else {
-            __.alertActions[self.titleLabel!.text!]?()
+            if let action = objc_getAssociatedObject(self, &actionKey) as? () -> Void {
+                action()
+            }
         }
     }
     
@@ -24,8 +25,8 @@ extension UIButton {
         self.actionHandler()
     }
     
-    func actionHandler(controlEvents control :UIControl.Event, forAction action: @escaping () -> Void) {
+    func actionHandler(for controlEvents: UIControl.Event, action: @escaping () -> Void) {
         self.actionHandler(action: action)
-        self.addTarget(self, action: #selector(triggerActionHandler), for: control)
+        self.addTarget(self, action: #selector(triggerActionHandler), for: controlEvents)
     }
 }

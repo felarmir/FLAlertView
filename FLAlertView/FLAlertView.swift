@@ -123,7 +123,7 @@ public class FLAlertView: UIView {
                 width: alertViewFrame.size.width,
                 height: 45)
             doneButton.setTitle("Ok", for: .normal)
-            doneButton.actionHandler(controlEvents: .touchUpInside, forAction: {})
+            doneButton.actionHandler(for: .touchUpInside, action: {})
             doneButton.titleLabel!.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
 
 
@@ -390,7 +390,7 @@ extension FLAlertView {
 
         button.setTitle(title, for: .normal)
         button.backgroundColor = .white
-        button.actionHandler(controlEvents: .touchUpInside) {
+        button.actionHandler(for: .touchUpInside) {
             action()
             self.dismissAlertView()
         }
