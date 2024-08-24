@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             subTitle: "Test subtitle. Test subtitle.Test subtitle",
             dismissOnOutsideTouch: true
         )
-        let alert = FLAlertView(model: model)
+        let alert = FLAlertView(with: model)
         alert.addAction(title: "Cancel", type: .cancel) {
             print("Cancel 1")
         }
