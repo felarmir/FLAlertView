@@ -15,7 +15,10 @@ let package = Package(
     targets: [
         .target(
             name: "FLAlertView",
-            path: "FLAlertView"
+            path: "FLAlertView",
+            resources: [
+                .process("FLAlertView/Resources")
+            ]
         ),
     ]
 )
