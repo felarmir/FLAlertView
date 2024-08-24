@@ -405,9 +405,7 @@ extension FLAlertView {
     }
 
     public func showAlert(inView view: UIViewController,
-                          with model: FLAlertModel,
                           withDoneButtonTitle done: String?) {
-        self.model = model
         addAction(title: done ?? "Done", type: .done, action: dismissAlertView)
         view.view.window?.addSubview(self)
     }

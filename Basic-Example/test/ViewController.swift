@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             alertImage: UIImage(named: "git_icon"),
             dismissOnOutsideTouch: true
         )
-        let alert = FLAlertView()
+        let alert = FLAlertView(with: model)
         alert.showAlert(inView: self,
                         with: model,
                         withDoneButtonTitle: "Done")
