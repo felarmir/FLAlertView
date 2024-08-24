@@ -29,25 +29,19 @@ public class FLAlertView: UIView {
         circle.fillColor = UIColor.white.cgColor
         return circle
     }()
-    
-    private let windowFrame: CGRect = {
-        let result = UIScreen.main.bounds.size
-        return CGRect(x: 0, y: 0, width: result.width, height: result.height)
-    }()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
     // MARK: Default Init
-    public convenience init(model: FLAlertModel) {
-        self.init(frame: windowFrame)
+    public convenience init(with model: FLAlertModel) {
+        self.init(frame: UIScreen.main.bounds)
         self.model = model
     }
 
     public convenience init(type: FLAlertType, model: FLAlertModel) {
-        self.init(frame: frame)
-        self.model = model
+        self.init(with: model)
         switch type {
         case .caution:
             makeCautionUI()
