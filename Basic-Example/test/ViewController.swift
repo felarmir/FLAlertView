@@ -41,9 +41,6 @@ class ViewController: UIViewController {
             dismissOnOutsideTouch: true
         )
         let alert = FLAlertView(type: .success, model: model)
-        alert.dismissOnOutsideTouch = true
-        alert.title = "Test title"
-        alert.subTitle = "Test subtitle. Test subtitle.Test subtitle"
         alert.addAction(title: "Cancel") {
             print("Cancel")
         }
@@ -55,10 +52,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func showWarning(sender: UIButton) {
-        let alert = FLAlertView(type: .warning)
-        alert.dismissOnOutsideTouch = true
-        alert.title = "Test title"
-        alert.subTitle = "Test subtitle. Test subtitle.Test subtitle"
+        let model = FLAlertModel(
+            title: "Test title",
+            subTitle: "Test subtitle. Test subtitle.Test subtitle",
+            dismissOnOutsideTouch: true
+        )
+        let alert = FLAlertView(type: .warning, model: model)
         alert.addAction(title: "Cancel") {
             print("Cancel")
         }
@@ -71,10 +70,12 @@ class ViewController: UIViewController {
     
     //
     @IBAction func showCout(sender: UIButton) {
-        let alert = FLAlertView(type: .caution)
-        alert.dismissOnOutsideTouch = true
-        alert.title = "Test title"
-        alert.subTitle = "Test subtitle. Test subtitle.Test subtitle"
+        let model = FLAlertModel(
+            title: "Test title",
+            subTitle: "Test subtitle. Test subtitle.Test subtitle",
+            dismissOnOutsideTouch: true
+        )
+        let alert = FLAlertView(type: .caution, model: model)
         alert.addAction(title: "Cancel") {
             print("Cancel")
         }
@@ -86,12 +87,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func showSimpleAlertWithImage(sender: UIButton) {
+        let model = FLAlertModel(
+            title: "Test title",
+            subTitle: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
+            alertImage: UIImage(named: "git_icon"),
+            dismissOnOutsideTouch: true
+        )
         let alert = FLAlertView()
-        alert.dismissOnOutsideTouch = true
         alert.showAlert(inView: self,
-                        withTitle: "Test title",
-                        withSubtitle: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
-                        withCustomImage: UIImage(named: "git_icon"),
+                        with: model,
                         withDoneButtonTitle: "Done")
         
     }

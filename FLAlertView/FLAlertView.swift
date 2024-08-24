@@ -18,16 +18,21 @@ public class FLAlertView: UIView {
     private var buttons = [UIButton]()
 
     // AlertView Background : Probably take frame out & make it constant
-    let alertContainerBackgroundView: UIView = {
+    private let alertContainerBackgroundView: UIView = {
         let alertContainerBackgroundView = UIView()
         alertContainerBackgroundView.backgroundColor = UIColor(white: 0, alpha: 0.35)
         return alertContainerBackgroundView
     }()
 
-    let circleLayer: CAShapeLayer = {
+    private let circleLayer: CAShapeLayer = {
         let circle = CAShapeLayer()
         circle.fillColor = UIColor.white.cgColor
         return circle
+    }()
+    
+    private let windowFrame: CGRect = {
+        let result = UIScreen.main.bounds.size
+        return CGRect(x: 0, y: 0, width: result.width, height: result.height)
     }()
 
     public override init(frame: CGRect) {
@@ -36,14 +41,12 @@ public class FLAlertView: UIView {
 
     // MARK: Default Init
     public convenience init(model: FLAlertModel) {
-        let result = UIScreen.main.bounds.size
-        let frame = CGRect(x: 0, y: 0, width: result.width, height: result.height)
-        self.init(frame: frame)
+        self.init(frame: windowFrame)
         self.model = model
     }
 
     public convenience init(type: FLAlertType, model: FLAlertModel) {
-        self.init()
+        self.init(frame: frame)
         self.model = model
         switch type {
         case .caution:
