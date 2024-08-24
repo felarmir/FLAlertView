@@ -15,6 +15,7 @@
 		2A40367A2C7A728D003622BA /* FLAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4036792C7A728D003622BA /* FLAlertView */; };
 		2A40367D2C7A72C9003622BA /* FLAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A40367C2C7A72C9003622BA /* FLAlertView */; };
 		2A4036802C7A745E003622BA /* FLAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A40367F2C7A745E003622BA /* FLAlertView */; };
+		2A4036832C7A74B8003622BA /* FLAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4036822C7A74B8003622BA /* FLAlertView */; };
 		2AE7A49C23FD6392005B73EC /* ExampleAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7A49B23FD6392005B73EC /* ExampleAlertUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4036832C7A74B8003622BA /* FLAlertView in Frameworks */,
 				2A40367D2C7A72C9003622BA /* FLAlertView in Frameworks */,
 				2A4036802C7A745E003622BA /* FLAlertView in Frameworks */,
 				2A40367A2C7A728D003622BA /* FLAlertView in Frameworks */,
@@ -136,6 +138,7 @@
 				2A4036792C7A728D003622BA /* FLAlertView */,
 				2A40367C2C7A72C9003622BA /* FLAlertView */,
 				2A40367F2C7A745E003622BA /* FLAlertView */,
+				2A4036822C7A74B8003622BA /* FLAlertView */,
 			);
 			productName = test;
 			productReference = 013CA56A1D7B5659003B6EE4 /* ExampleAlert.app */;
@@ -191,6 +194,7 @@
 			);
 			mainGroup = 013CA5611D7B5659003B6EE4;
 			packageReferences = (
+				2A4036812C7A74B8003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */,
 			);
 			productRefGroup = 013CA56B1D7B5659003B6EE4 /* Products */;
 			projectDirPath = "";
@@ -501,6 +505,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		2A4036812C7A74B8003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/felarmir/FLAlertView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2A4036792C7A728D003622BA /* FLAlertView */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -512,6 +527,11 @@
 		};
 		2A40367F2C7A745E003622BA /* FLAlertView */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = FLAlertView;
+		};
+		2A4036822C7A74B8003622BA /* FLAlertView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A4036812C7A74B8003622BA /* XCRemoteSwiftPackageReference "FLAlertView" */;
 			productName = FLAlertView;
 		};
 /* End XCSwiftPackageProductDependency section */

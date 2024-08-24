@@ -18,10 +18,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func showSimpleAlert(sender: UIButton) {
-        let alert = FLAlertView()
-        alert.dismissOnOutsideTouch = true
-        alert.title = "Test title"
-        alert.subTitle = "Test subtitle. Test subtitle.Test subtitle"
+        let model = FLAlertModel(
+            title: "Test title",
+            subTitle: "Test subtitle. Test subtitle.Test subtitle",
+            dismissOnOutsideTouch: true
+        )
+        let alert = FLAlertView(model: model)
         alert.addAction(title: "Cancel", type: .cancel) {
             print("Cancel 1")
         }

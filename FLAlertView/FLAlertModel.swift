@@ -11,11 +11,11 @@ public struct FLAlertModel {
     var title: String?
     var subTitle: String?
     var alertImage: UIImage?
-    var autoHideSeconds = 0
+    var autoHideSeconds: Int
     var colorScheme: UIColor?
-    var titleColor: UIColor = .black
-    var subTitleColor: UIColor = .black
-    var dismissOnOutsideTouch = false
+    var titleColor: UIColor
+    var subTitleColor: UIColor
+    var dismissOnOutsideTouch: Bool
     
     public init(
         title: String? = nil,
@@ -23,8 +23,8 @@ public struct FLAlertModel {
         alertImage: UIImage? = nil,
         autoHideSeconds: Int = 0,
         colorScheme: UIColor? = nil,
-        titleColor: UIColor,
-        subTitleColor: UIColor,
+        titleColor: UIColor = .black,
+        subTitleColor: UIColor = .black,
         dismissOnOutsideTouch: Bool = false)
     {
         self.title = title
