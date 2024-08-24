@@ -349,7 +349,7 @@ extension FLAlertView {
 
     // Default Types of Alerts
     private func makeWarningUI() {
-        if let path = Bundle(for: FLAlertView.self).path(forResource: "close-round", ofType: "png") {
+        if let path = Bundle(identifier: "FLAlertView")?.path(forResource: "close-round", ofType: "png") {
             setTheme(iconPath: path, tintColor: .flatRed)
         }
     }
