@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "FLAlertView",
+    platforms: [
+        .iOS(.v14)
+    ],
     products: [
         .library(
             name: "FLAlertView",
