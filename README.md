@@ -30,13 +30,15 @@ Clone or Download this Repo. Then simply drag the folder ```FLAlertView``` to yo
 ### SwiftPM
 
 You can use "Xcode/File/Swift Packages/Add Package Dependency..." and write github url:
-``` https://github.com/felarmir/FLAlertView.git ```
+```url 
+https://github.com/felarmir/FLAlertView.git
+```
 
 # Example
 
 FLAlertView comes with an example app that you can use to try out all of the customizations below. It's recommended that you go through all of the docs before using the example app. To use the example app, clone or download FLAlertView, open and run ```Example/FLAlertView.xcworkspace```.
 
-#Adding FLAlertView
+# Adding FLAlertView
 
 Start by adding the following to your desired View Controller:
 
