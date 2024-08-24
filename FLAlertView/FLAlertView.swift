@@ -7,17 +7,12 @@
 
 import UIKit
 
+/// Alert view
 public class FLAlertView: UIView {
 
-    public var title: String?
-    public var subTitle: String?
-    public var alertImage: UIImage?
-    public var autoHideSeconds = 0
-    public var colorScheme: UIColor?
-    public var titleColor: UIColor = .black
-    public var subTitleColor: UIColor = .black
-    public var dismissOnOutsideTouch = false
-
+    /// Alert view model
+    public var model: FLAlertModel?
+    
     private var alertView: UIView?
     private var alertViewContainer: UIView?
     private var buttons = [UIButton]()
@@ -40,15 +35,16 @@ public class FLAlertView: UIView {
     }
 
     // MARK: Default Init
-    public convenience init() {
+    public convenience init(model: FLAlertModel) {
         let result = UIScreen.main.bounds.size
         let frame = CGRect(x: 0, y: 0, width: result.width, height: result.height)
         self.init(frame: frame)
+        self.model = model
     }
 
-    public convenience init(type: FLAlertType) {
+    public convenience init(type: FLAlertType, model: FLAlertModel) {
         self.init()
-
+        self.model = model
         switch type {
         case .caution:
             makeCautionUI()
@@ -72,7 +68,9 @@ public class FLAlertView: UIView {
             let isPointInsideBackview = alertContainerBackgroundView.point(inside: touchPoint, with: nil)
             let isPointInsideAlertView = alertContainerBackgroundView.point(inside: touchPoint2, with: nil)
 
-            if dismissOnOutsideTouch && isPointInsideBackview && !isPointInsideAlertView {
+            if model?.dismissOnOutsideTouch == true
+                && isPointInsideBackview
+                && !isPointInsideAlertView {
                 dismissAlertView()
             }
         }
@@ -89,7 +87,7 @@ public class FLAlertView: UIView {
         alertView = UIView(frame: CGRect(x: 0, y: 0, width: alertViewFrame.size.width, height: alertViewFrame.size.height))
 
         //  Setting Background Color of AlertView
-        if alertImage != nil {
+        if model?.alertImage != nil {
             alertView!.backgroundColor = .clear
         } else {
             alertView!.backgroundColor = .white
@@ -98,7 +96,7 @@ public class FLAlertView: UIView {
 
         // CREATING ALERTVIEW
         // CUSTOM SHAPING - Displaying Cut out circle for Vector Type Alerts
-        if alertImage != nil {
+        if model?.alertImage != nil {
             renderCircleCutout(withAlertViewFrame: alertViewFrame)
         }
 
@@ -110,7 +108,7 @@ public class FLAlertView: UIView {
         // View only contains DONE/DISMISS Button
         if(buttons.isEmpty) {
             let doneButton = UIButton(type: .system)
-            if let colorScheme = self.colorScheme {
+            if let colorScheme = self.model?.colorScheme {
                 doneButton.backgroundColor = colorScheme
                 doneButton.tintColor = .white
             } else {
@@ -184,20 +182,21 @@ public class FLAlertView: UIView {
 
 
         let imageViewButton = UIButton(type: .system)
+        
         imageViewButton.frame = CGRect(
             x: alertViewContainer!.frame.size.width / 2 - 15.0,
             y: -15.0,
             width: 30.0,
             height: 30.0)
-        imageViewButton.setImage(alertImage, for: .normal)
+        imageViewButton.setImage(model?.alertImage, for: .normal)
         imageViewButton.isUserInteractionEnabled = false
-        imageViewButton.tintColor = colorScheme
+        imageViewButton.tintColor = model?.colorScheme
 
         //  VIEW Border - Rounding Corners of AlertView
         alertView?.layer.cornerRadius = FLAlertConstants.cornerRadius
         alertView?.clipsToBounds = true
 
-        if alertImage != nil {
+        if model?.alertImage != nil {
             alertViewContainer!.layer.addSublayer(circleLayer)
             alertViewContainer!.addSubview(imageViewButton)
         }
@@ -228,7 +227,7 @@ extension FLAlertView {
         alertContainerBackgroundView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
 
         //  Adjusting AlertView Frames
-        if alertImage != nil {
+        if model?.alertImage != nil {
             alertViewFrame = CGRect(x: horizontalPosition,
                                     y: self.frame.size.height / 2 - (200.0 / 2),
                                     width: viewWidth,
@@ -241,7 +240,7 @@ extension FLAlertView {
         }
 
         //  Frames for when AlertView doesn't contain a title
-        if title == nil {
+        if model?.title == nil {
             alertViewFrame = CGRect(x: horizontalPosition,
                                     y: self.bounds.height / 2 - ((alertViewFrame.size.height - 50) / 2),
                                     width: viewWidth,
@@ -296,28 +295,28 @@ extension FLAlertView {
 
         let titleLabel = UILabel(frame: CGRect(
                                     x: 15.0,
-                                    y: 20.0 + CGFloat(((alertImage != nil) ? 1 : 0) * 30),
+                                    y: 20.0 + CGFloat(((model?.alertImage != nil) ? 1 : 0) * 30),
                                     width: alertViewFrame.size.width - 30.0,
                                     height: 20.0))
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.medium)
         titleLabel.numberOfLines = 1
-        titleLabel.textColor = titleColor
-        titleLabel.text = title
+        titleLabel.textColor = model?.titleColor
+        titleLabel.text = model?.title
         titleLabel.textAlignment = .center
 
-        let descriptionLevel = (title == nil) ? 25 : 45
+        let descriptionLevel = (model?.title == nil) ? 25 : 45
 
         let messageLabel = UILabel(frame: CGRect(
                                         x: 25.0,
-                                        y: CGFloat(descriptionLevel + ((alertImage != nil) ? 1 : 0) * 30),
+                                        y: CGFloat(descriptionLevel + ((model?.alertImage != nil) ? 1 : 0) * 30),
                                         width: alertViewFrame.size.width - 50.0,
                                         height: 60.0))
-        messageLabel.font = (title == nil) ? UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular):
+        messageLabel.font = (model?.title == nil) ? UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.regular):
             UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
 
         messageLabel.numberOfLines = 4
-        messageLabel.textColor = subTitleColor
-        messageLabel.text = subTitle
+        messageLabel.textColor = model?.subTitleColor
+        messageLabel.text = model?.subTitle
         messageLabel.textAlignment = .center
         messageLabel.adjustsFontSizeToFitWidth = true
 
@@ -367,8 +366,8 @@ extension FLAlertView {
     }
 
     private func setTheme(iconPath path: String, tintColor color: UIColor) {
-        alertImage = UIImage(contentsOfFile: path)
-        self.colorScheme = color
+        model?.alertImage = UIImage(contentsOfFile: path)
+        self.model?.colorScheme = color
     }
 
 }
@@ -381,7 +380,7 @@ extension FLAlertView {
 
         switch type {
         case .defaultButton:
-            button.tintColor = colorScheme
+            button.tintColor = model?.colorScheme
         case .done:
             button.tintColor = .flatGreen
         case .cancel:
@@ -409,17 +408,9 @@ extension FLAlertView {
     }
 
     public func showAlert(inView view: UIViewController,
-                          withTitle title: String?,
-                          withSubtitle subTitle: String,
-                          withCustomImage image: UIImage?,
+                          with model: FLAlertModel,
                           withDoneButtonTitle done: String?) {
-
-        self.title = title
-        self.subTitle = subTitle
-        self.alertImage = image
         addAction(title: done ?? "Done", type: .done, action: dismissAlertView)
-
-
         view.view.window?.addSubview(self)
     }
 
@@ -429,8 +420,8 @@ extension FLAlertView {
             self.alpha = 1
             self.alertViewContainer?.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (finished) in
-            if self.autoHideSeconds != 0 {
-                self.perform(#selector(self.dismissAlertView), with: nil, afterDelay: Double(self.autoHideSeconds))
+            if self.model?.autoHideSeconds != 0 {
+                self.perform(#selector(self.dismissAlertView), with: nil, afterDelay: Double(self.model?.autoHideSeconds ?? 0))
             }
         }
     }

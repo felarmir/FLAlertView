@@ -10,13 +10,13 @@ import Foundation
 /// Types of alerts that can be displayed.
 public enum FLAlertType {
     /// Represents a cautionary alert, typically used for non-critical warnings or notifications.
-    case caution
+    case caution(FLAlertModel)
     
     /// Represents a success alert, typically used to indicate successful completion of an operation.
-    case success
+    case success(FLAlertModel)
     
     /// Represents a warning alert, typically used for more serious alerts that require user attention.
-    case warning
+    case warning(FLAlertModel)
 }
 
 /// Types of buttons that can be displayed in an alert.
