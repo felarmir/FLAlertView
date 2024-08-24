@@ -35,7 +35,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func showSimpleSuccessAlert(sender: UIButton) {
-        let alert = FLAlertView(type: .success)
+        let model = FLAlertModel(
+            title: "Test title",
+            subTitle: "Test subtitle. Test subtitle.Test subtitle",
+            dismissOnOutsideTouch: true
+        )
+        let alert = FLAlertView(type: .success, model: model)
         alert.dismissOnOutsideTouch = true
         alert.title = "Test title"
         alert.subTitle = "Test subtitle. Test subtitle.Test subtitle"
