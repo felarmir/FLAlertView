@@ -94,9 +94,6 @@ class ViewController: UIViewController {
             dismissOnOutsideTouch: true
         )
         let alert = FLAlertView(with: model)
-        alert.showAlert(inView: self,
-                        with: model,
-                        withDoneButtonTitle: "Done")
-        
+        alert.showAlert(inView: self, withDoneButtonTitle: "Done")
     }
 }
